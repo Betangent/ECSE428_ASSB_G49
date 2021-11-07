@@ -1,28 +1,33 @@
 // Imports
 let express = require("express");
 let app = express();
-// Properties
+let bodyParser = require("body-parser");
+// Configurables
 let port = 8080;
+// App Properties
+app.use(express.json());
+//app.use(express.urlencoded({extended:true}));
+
 
 // MAIN FUNCTION FOR THE PURPOSE OF THIS ASSIGNMENT
 // POST request at /rate
 app.post("/rate", (req, res, next) => {
     consoleLogNoTest("Received POST request at /rate");
-    consoleLogNoTest(req.json);
+    consoleLogNoTest(req.body);
     res.status(501).json("Function is to be implemented after tests are created.");
 });
 
 // Test Control for what an error should look like
 app.post("/example/error", (req, res, next) => {
     consoleLogNoTest("Received POST request at /example/error");
-    consoleLogNoTest(req.json);
+    consoleLogNoTest(req.body);
     res.status(400).send("Bad Request error.");
 });
 
 // Test Control for what a good response should look like
 app.post("/example/good", (req, res, next) => {
     consoleLogNoTest("Received POST request at /example/good");
-    consoleLogNoTest(req.json);
+    consoleLogNoTest(req.body);
     let rate = 0.49;
     res.status(200).json({rate});
 });

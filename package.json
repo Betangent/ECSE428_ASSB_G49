@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Betangent/ECSE428_ASSB_G49/issues"
   },
-  "homepage": "https://github.com/Betangent/ECSE428_ASSB_G49#readme"
+  "homepage": "https://github.com/Betangent/ECSE428_ASSB_G49#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

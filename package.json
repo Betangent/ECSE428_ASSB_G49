@@ -18,5 +18,9 @@
   "homepage": "https://github.com/Betangent/ECSE428_ASSB_G49#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies":{
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
   }
 }

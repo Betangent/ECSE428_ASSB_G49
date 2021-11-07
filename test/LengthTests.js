@@ -7,7 +7,7 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 // Test Parent Block
-describe("Test on POST request on /rate focusing on length properties", () =>{
+describe("Test /rate POST, varying sent length properties", () =>{
 
     describe("POST /rate with -1 mm length ", () =>{
         it("it should yield a Bad Request response status", (done) => {
@@ -24,8 +24,8 @@ describe("Test on POST request on /rate focusing on length properties", () =>{
             .send(envelopeProperties)
             .end((err,res) => {
                 res.should.have.status(400);
+                done();
             });
-
         });
     });
 

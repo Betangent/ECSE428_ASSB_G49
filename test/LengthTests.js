@@ -34,7 +34,7 @@ function test_RateByLengths(l, l_u, done, rstatus, rrate = null){
 
 // Test Template for Length Tests - Mocha level
 function loggedTest_RateByLengths(len, len_unit, desc_expectedRes, resStatus, resRate = null){
-    describe("POST /rate with " + len + " " + len_unit, () => {
+    describe("POST /rate with " + len + " " + len_unit + " length", () => {
         let description = "it should yield a " + desc_expectedRes;
         if(resRate !== null){
             description = description + " with rate at " + resRate;
@@ -50,16 +50,16 @@ describe("Test /rate POST, varying sent length properties", () =>{
 
     // Out of bounds: negative mm is not possible
     loggedTest_RateByLengths(-1,"mm","Bad request response status",400);
-    // Non-standard envelope sizes in mm
+    // Non-standard envelope lengths in mm
     loggedTest_RateByLengths(0,"mm","OK response status", 200, 0.98);
     loggedTest_RateByLengths(1,"mm","OK response status", 200, 0.98);
     loggedTest_RateByLengths(139,"mm","OK response status", 200, 0.98);
-    // Standard envelope sizes in mm
+    // Standard envelope lengths in mm
     loggedTest_RateByLengths(140,"mm","OK response status", 200, 0.49);
     loggedTest_RateByLengths(141,"mm","OK response status", 200, 0.49);
     loggedTest_RateByLengths(244,"mm","OK response status", 200, 0.49);
     loggedTest_RateByLengths(245,"mm","OK response status", 200, 0.49);
-    // Non-standard envelope sizes in mm
+    // Non-standard envelope lengths in mm
     loggedTest_RateByLengths(246,"mm","OK response status", 200, 0.98);
     loggedTest_RateByLengths(379,"mm","OK response status", 200, 0.98);
     loggedTest_RateByLengths(380,"mm","OK response status", 200, 0.98);
@@ -67,12 +67,12 @@ describe("Test /rate POST, varying sent length properties", () =>{
     loggedTest_RateByLengths(381,"mm","Bad request response status", 400);
     // Out of bounds: negative inches in possible
     loggedTest_RateByLengths(-1,"inch","Bad request response status", 400);
-    // Non-standard envelope sizes in inches
+    // Non-standard envelope lengths in inches
     loggedTest_RateByLengths(0,"inch","OK response status", 200, 0.98);
     loggedTest_RateByLengths(1,"inch","OK response status", 200, 0.98);
     // Standard envelope size in inches
     loggedTest_RateByLengths(7.875,"inch","OK response status", 200, 0.49);
-    // Non-standard envelope sizes in inches
+    // Non-standard envelope lengths in inches
     loggedTest_RateByLengths(12,"inch","OK response status", 200, 0.98);
     // Out of bounds: oversized envelope: we assume 380mm is limit.
     loggedTest_RateByLengths(16,"inch","Bad request response status", 400);

@@ -77,8 +77,8 @@ describe("Test /rate POST, varying sent width properties", () =>{
     // Out of bounds: oversized envelope: we assume 380mm is limit.
     loggedTest_RateByWidths(12,"inch","Bad request response status", 400);
     // Bad payload: invalid unit of width
-    loggedTest_RateByWidths(0,"asdf","Bad request response status", 400);
-    // Bad Payload: non-integer width
+    loggedTest_RateByWidths(1,"asdf","Bad request response status", 400);
+    // Bad Payload: non-numeric width
     loggedTest_RateByWidths("asdf","inch","Bad request response status", 400);
 
 });

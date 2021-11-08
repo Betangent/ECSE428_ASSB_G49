@@ -77,8 +77,8 @@ describe("Test /rate POST, varying sent length properties", () =>{
     // Out of bounds: oversized envelope: we assume 380mm is limit.
     loggedTest_RateByLengths(16,"inch","Bad request response status", 400);
     // Bad payload: invalid unit of length
-    loggedTest_RateByLengths(0,"asdf","Bad request response status", 400);
-    // Bad Payload: non-integer length
+    loggedTest_RateByLengths(1,"asdf","Bad request response status", 400);
+    // Bad Payload: non-numeric length
     loggedTest_RateByLengths("asdf","inch","Bad request response status", 400);
 
 });

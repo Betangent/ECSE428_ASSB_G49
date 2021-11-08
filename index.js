@@ -79,6 +79,38 @@ app.post("/rate", (req, res, next) => {
     if( weight_in_g > 100 ){
         let rate = 2.40;
         res.status(200).json({rate});
+        return;
+    }
+    // If the package's weight is outside [3,50] grams, it is nonstandard.
+    if( weight_in_g < 3 || weight_in_g > 50 ){
+        let rate = 0.98;
+        res.status(200).json({rate});
+        return;
+    }
+    // If the package's length is outside [140,245], it is nonstandard.
+    if( length_in_mm < 140 || length_in_mm > 245 ){
+        let rate = 0.98;
+        res.status(200).json({rate});
+        return;
+    }
+    // If the package's width is outside [90, 156], it is nonstandard.
+    if( width_in_mm < 90 || width_in_mm > 156 ){
+        let rate = 0.98;
+        res.status(200).json({rate});
+        return;
+    }
+    // The package must be standard from here on.
+    // If the package's weight is in ]30,50], it is standard expensive.
+    if( weight_in_g > 30 && weight_in_g <= 50 ){
+        let rate = 0.80;
+        res.status(200).json({rate});
+        return;
+    }
+    // Otherwise, as the package's weight is below 30 grams, it is standard cheap.
+    if( weight_in_g <= 30 ){
+        let rate = 0.49;
+        res.status(200).json({rate});
+        return;
     }
 
     // SECTION - Reached All Filters

@@ -37,13 +37,13 @@ app.post("/rate", (req, res, next) => {
     }
     
     // SECTION - UNIT VALUE CHECKS
-    if( req.body.length_unit !== "mm" || req.body.length_unit !== "inch" ){
+    if( req.body.length_unit !== "mm" && req.body.length_unit !== "inch" ){
         res.status(400).send("Envelope unit for length is neither the accepted mm or inch.");
         return;
-    } else if( req.body.width_unit !== "mm" || req.body.width_unit !== "inch" ){
+    } else if( req.body.width_unit !== "mm" && req.body.width_unit !== "inch" ){
         res.status(400).send("Envelope unit for width is neither the accepted mm or inch.");
         return;
-    } else if( req.body.weight_unit !== "g" || req.body.weight_unit !== "oz" ){
+    } else if( req.body.weight_unit !== "g" && req.body.weight_unit !== "oz" ){
         res.status(400).send("Envelope unit for weight is neither the accepted g or oz.");
         return;
     }
@@ -74,6 +74,17 @@ app.post("/rate", (req, res, next) => {
         return;
     }
 
+    // SECTION - Price Calculation
+    // If the package is overweight, rate is 2.40
+    if( weight_in_g > 100 ){
+        let rate = 2.40;
+        res.status(200).json({rate});
+    }
+
+    // SECTION - Reached All Filters
+    // If logic reaches here, something hasn't been coded right.
+    res.status(422).send("Failed to attribute rate to given envelope properties.");
+    return;
 
 });
 

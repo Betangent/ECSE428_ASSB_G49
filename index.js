@@ -1,7 +1,7 @@
 // Imports
 let express = require("express");
 let app = express();
-let bodyParser = require("body-parser");
+let typeCheck = require("type-check").typeCheck;
 // Configurables
 let port = 8080;
 // App Properties
@@ -14,7 +14,67 @@ app.use(express.json());
 app.post("/rate", (req, res, next) => {
     consoleLogNoTest("Received POST request at /rate");
     consoleLogNoTest(req.body);
-    res.status(501).json("Function is to be implemented after tests are created.");
+
+    // SECTION - TYPE CHECKS
+    if( !typeCheck("Number", req.body.length) ){
+        res.status(400).send("Envelope length received is not numeric.");
+        return;
+    } else if( !typeCheck("String", req.body.length_unit)){
+        res.status(400).send("Envelope unit for length received is not a string.");
+        return;
+    } else if( !typeCheck("Number", req.body.width) ){
+        res.status(400).send("Envelope width received is not numeric.");
+        return;
+    } else if( !typeCheck("String", req.body.width_unit)){
+        res.status(400).send("Envelope unit for width received is not a string.");
+        return;
+    } else if( !typeCheck("Number", req.body.weight) ){
+        res.status(400).send("Envelope weight received is not numeric.");
+        return;
+    } else if( !typeCheck("String", req.body.weight_unit)){
+        res.status(400).send("Envelope unit for weight received is not a string.");
+        return;
+    }
+    
+    // SECTION - UNIT VALUE CHECKS
+    if( req.body.length_unit !== "mm" || req.body.length_unit !== "inch" ){
+        res.status(400).send("Envelope unit for length is neither the accepted mm or inch.");
+        return;
+    } else if( req.body.width_unit !== "mm" || req.body.width_unit !== "inch" ){
+        res.status(400).send("Envelope unit for width is neither the accepted mm or inch.");
+        return;
+    } else if( req.body.weight_unit !== "g" || req.body.weight_unit !== "oz" ){
+        res.status(400).send("Envelope unit for weight is neither the accepted g or oz.");
+        return;
+    }
+
+    // SECTION - UNIT CONVERSIONS
+    let length_in_mm = req.body.length_unit === "mm" ? req.body.length : req.body.length*25.4;
+    let width_in_mm = req.body.width_unit === "mm" ? req.body.width : req.body.width*25.4;
+    let weight_in_g = req.body.weight_unit === "g" ? req.body.weight : req.body.weight*28.35;
+
+    // SECTION - BOUNDARY CHECKS
+    if( length_in_mm < 0 ){
+        res.status(400).send("Envelope length received is not positive.");
+        return;
+    } else if (length_in_mm > 380){
+        res.status(400).send("Envelope length received exceeds maximal 380 mm.");
+        return;
+    } else if( width_in_mm < 0 ){
+        res.status(400).send("Envelope width received is not positive.");
+        return;
+    } else if (width_in_mm > 270){
+        res.status(400).send("Envelope width received exceeds maximal 270 mm.");
+        return;
+    } else if( weight_in_g < 0 ){
+        res.status(400).send("Envelope weight received is not positive.");
+        return;
+    } else if (weight_in_g > 500){
+        res.status(400).send("Envelope weight received exceeds maximal 500 g.");
+        return;
+    }
+
+
 });
 
 // Test Control for what an error should look like

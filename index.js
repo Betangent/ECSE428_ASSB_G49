@@ -6,7 +6,6 @@ let typeCheck = require("type-check").typeCheck;
 let port = 8080;
 // App Properties
 app.use(express.json());
-//app.use(express.urlencoded({extended:true}));
 
 
 // MAIN FUNCTION FOR THE PURPOSE OF THIS ASSIGNMENT

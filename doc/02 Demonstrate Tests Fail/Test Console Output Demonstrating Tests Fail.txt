@@ -1,0 +1,1387 @@
+
+Edwin@ALPHA MINGW64 ~/Documents/Homework/ECSE428 - Software Practice/Assignment B/repo/ECSE428_ASSB_G49 (master)
+$ ./node_modules/.bin/mocha --exit
+Server running on port 8080
+
+
+  Helper Tests: Test test examples
+    POST /example/error
+      v it should yield an error 400 response
+    POST /example/good
+      v it should yield a response 200 with simple rate json
+
+  Test /rate POST, varying sent length properties
+    POST /rate with -1 mm length
+      1) it should yield a Bad request response status
+    POST /rate with 0 mm length
+      2) it should yield a OK response status with rate at 0.98
+    POST /rate with 1 mm length
+      3) it should yield a OK response status with rate at 0.98
+    POST /rate with 139 mm length
+      4) it should yield a OK response status with rate at 0.98
+    POST /rate with 140 mm length
+      5) it should yield a OK response status with rate at 0.49
+    POST /rate with 141 mm length
+      6) it should yield a OK response status with rate at 0.49
+    POST /rate with 244 mm length
+      7) it should yield a OK response status with rate at 0.49
+    POST /rate with 245 mm length
+      8) it should yield a OK response status with rate at 0.49
+    POST /rate with 246 mm length
+      9) it should yield a OK response status with rate at 0.98
+    POST /rate with 379 mm length
+      10) it should yield a OK response status with rate at 0.98
+    POST /rate with 380 mm length
+      11) it should yield a OK response status with rate at 0.98
+    POST /rate with 381 mm length
+      12) it should yield a Bad request response status
+    POST /rate with -1 inch length
+      13) it should yield a Bad request response status
+    POST /rate with 0 inch length
+      14) it should yield a OK response status with rate at 0.98
+    POST /rate with 1 inch length
+      15) it should yield a OK response status with rate at 0.98
+    POST /rate with 7.875 inch length
+      16) it should yield a OK response status with rate at 0.49
+    POST /rate with 12 inch length
+      17) it should yield a OK response status with rate at 0.98
+    POST /rate with 16 inch length
+      18) it should yield a Bad request response status
+    POST /rate with 1 asdf length
+      19) it should yield a Bad request response status
+    POST /rate with asdf inch length
+      20) it should yield a Bad request response status
+
+  Test /rate POST, varying sent weight properties
+    POST /rate with -1 g weight
+      21) it should yield a Bad request response status
+    POST /rate with 0 g weight
+      22) it should yield a OK response status with rate at 0
+    POST /rate with 1 g weight
+      23) it should yield a OK response status with rate at 0
+    POST /rate with 2 g weight
+      24) it should yield a OK response status with rate at 0
+    POST /rate with 3 g weight
+      25) it should yield a OK response status with rate at 0
+    POST /rate with 4 g weight
+      26) it should yield a OK response status with rate at 0
+    POST /rate with 29 g weight
+      27) it should yield a OK response status with rate at 0
+    POST /rate with 30 g weight
+      28) it should yield a OK response status with rate at 0
+    POST /rate with 31 g weight
+      29) it should yield a OK response status with rate at 0
+    POST /rate with 49 g weight
+      30) it should yield a OK response status with rate at 0
+    POST /rate with 50 g weight
+      31) it should yield a OK response status with rate at 0
+    POST /rate with 51 g weight
+      32) it should yield a OK response status with rate at 0
+    POST /rate with 99 g weight
+      33) it should yield a OK response status with rate at 0
+    POST /rate with 100 g weight
+      34) it should yield a OK response status with rate at 0
+    POST /rate with 101 g weight
+      35) it should yield a OK response status with rate at 0
+    POST /rate with 499 g weight
+      36) it should yield a OK response status with rate at 0
+    POST /rate with 500 g weight
+      37) it should yield a OK response status with rate at 0
+    POST /rate with 501 oz weight
+      38) it should yield a Bad request response status
+    POST /rate with -1 oz weight
+      39) it should yield a Bad request response status
+    POST /rate with 0 oz weight
+      40) it should yield a OK response status with rate at 0
+    POST /rate with 0.5 oz weight
+      41) it should yield a OK response status with rate at 0
+    POST /rate with 1 oz weight
+      42) it should yield a OK response status with rate at 0
+    POST /rate with 1.5 oz weight
+      43) it should yield a OK response status with rate at 0
+    POST /rate with 2.5 oz weight
+      44) it should yield a OK response status with rate at 0
+    POST /rate with 9 oz weight
+      45) it should yield a OK response status with rate at 0
+    POST /rate with 20 oz weight
+      46) it should yield a Bad request response status
+    POST /rate with 1 asdf weight
+      47) it should yield a Bad request response status
+    POST /rate with asdf g weight
+      48) it should yield a Bad request response status
+
+  Test /rate POST, varying sent width properties
+    POST /rate with -1 mm width
+      49) it should yield a Bad request response status
+    POST /rate with 0 mm width
+      50) it should yield a OK response status with rate at 0.98
+    POST /rate with 1 mm width
+      51) it should yield a OK response status with rate at 0.98
+    POST /rate with 89 mm width
+      52) it should yield a OK response status with rate at 0.98
+    POST /rate with 90 mm width
+      53) it should yield a OK response status with rate at 0.49
+    POST /rate with 91 mm width
+      54) it should yield a OK response status with rate at 0.49
+    POST /rate with 155 mm width
+      55) it should yield a OK response status with rate at 0.49
+    POST /rate with 156 mm width
+      56) it should yield a OK response status with rate at 0.49
+    POST /rate with 157 mm width
+      57) it should yield a OK response status with rate at 0.98
+    POST /rate with 269 mm width
+      58) it should yield a OK response status with rate at 0.98
+    POST /rate with 270 mm width
+      59) it should yield a OK response status with rate at 0.98
+    POST /rate with 271 mm width
+      60) it should yield a Bad request response status
+    POST /rate with -1 inch width
+      61) it should yield a Bad request response status
+    POST /rate with 0 inch width
+      62) it should yield a OK response status with rate at 0.98
+    POST /rate with 1 inch width
+      63) it should yield a OK response status with rate at 0.98
+    POST /rate with 5 inch width
+      64) it should yield a OK response status with rate at 0.49
+    POST /rate with 8 inch width
+      65) it should yield a OK response status with rate at 0.98
+    POST /rate with 12 inch width
+      66) it should yield a Bad request response status
+    POST /rate with 1 asdf width
+      67) it should yield a Bad request response status
+    POST /rate with asdf inch width
+      68) it should yield a Bad request response status
+
+
+  2 passing (275ms)
+  68 failing
+
+  1) Test /rate POST, varying sent length properties
+       POST /rate with -1 mm length
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  2) Test /rate POST, varying sent length properties
+       POST /rate with 0 mm length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  3) Test /rate POST, varying sent length properties
+       POST /rate with 1 mm length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  4) Test /rate POST, varying sent length properties
+       POST /rate with 139 mm length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  5) Test /rate POST, varying sent length properties
+       POST /rate with 140 mm length
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  6) Test /rate POST, varying sent length properties
+       POST /rate with 141 mm length
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  7) Test /rate POST, varying sent length properties
+       POST /rate with 244 mm length
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  8) Test /rate POST, varying sent length properties
+       POST /rate with 245 mm length
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  9) Test /rate POST, varying sent length properties
+       POST /rate with 246 mm length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  10) Test /rate POST, varying sent length properties
+       POST /rate with 379 mm length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  11) Test /rate POST, varying sent length properties
+       POST /rate with 380 mm length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  12) Test /rate POST, varying sent length properties
+       POST /rate with 381 mm length
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  13) Test /rate POST, varying sent length properties
+       POST /rate with -1 inch length
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  14) Test /rate POST, varying sent length properties
+       POST /rate with 0 inch length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  15) Test /rate POST, varying sent length properties
+       POST /rate with 1 inch length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  16) Test /rate POST, varying sent length properties
+       POST /rate with 7.875 inch length
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  17) Test /rate POST, varying sent length properties
+       POST /rate with 12 inch length
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  18) Test /rate POST, varying sent length properties
+       POST /rate with 16 inch length
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  19) Test /rate POST, varying sent length properties
+       POST /rate with 1 asdf length
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  20) Test /rate POST, varying sent length properties
+       POST /rate with asdf inch length
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\LengthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  21) Test /rate POST, varying sent weight properties
+       POST /rate with -1 g weight
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  22) Test /rate POST, varying sent weight properties
+       POST /rate with 0 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  23) Test /rate POST, varying sent weight properties
+       POST /rate with 1 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  24) Test /rate POST, varying sent weight properties
+       POST /rate with 2 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  25) Test /rate POST, varying sent weight properties
+       POST /rate with 3 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  26) Test /rate POST, varying sent weight properties
+       POST /rate with 4 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  27) Test /rate POST, varying sent weight properties
+       POST /rate with 29 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  28) Test /rate POST, varying sent weight properties
+       POST /rate with 30 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  29) Test /rate POST, varying sent weight properties
+       POST /rate with 31 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  30) Test /rate POST, varying sent weight properties
+       POST /rate with 49 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  31) Test /rate POST, varying sent weight properties
+       POST /rate with 50 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  32) Test /rate POST, varying sent weight properties
+       POST /rate with 51 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  33) Test /rate POST, varying sent weight properties
+       POST /rate with 99 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  34) Test /rate POST, varying sent weight properties
+       POST /rate with 100 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  35) Test /rate POST, varying sent weight properties
+       POST /rate with 101 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  36) Test /rate POST, varying sent weight properties
+       POST /rate with 499 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  37) Test /rate POST, varying sent weight properties
+       POST /rate with 500 g weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  38) Test /rate POST, varying sent weight properties
+       POST /rate with 501 oz weight
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  39) Test /rate POST, varying sent weight properties
+       POST /rate with -1 oz weight
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  40) Test /rate POST, varying sent weight properties
+       POST /rate with 0 oz weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  41) Test /rate POST, varying sent weight properties
+       POST /rate with 0.5 oz weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  42) Test /rate POST, varying sent weight properties
+       POST /rate with 1 oz weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  43) Test /rate POST, varying sent weight properties
+       POST /rate with 1.5 oz weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  44) Test /rate POST, varying sent weight properties
+       POST /rate with 2.5 oz weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  45) Test /rate POST, varying sent weight properties
+       POST /rate with 9 oz weight
+         it should yield a OK response status with rate at 0:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  46) Test /rate POST, varying sent weight properties
+       POST /rate with 20 oz weight
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  47) Test /rate POST, varying sent weight properties
+       POST /rate with 1 asdf weight
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  48) Test /rate POST, varying sent weight properties
+       POST /rate with asdf g weight
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WeightTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  49) Test /rate POST, varying sent width properties
+       POST /rate with -1 mm width
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  50) Test /rate POST, varying sent width properties
+       POST /rate with 0 mm width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  51) Test /rate POST, varying sent width properties
+       POST /rate with 1 mm width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  52) Test /rate POST, varying sent width properties
+       POST /rate with 89 mm width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  53) Test /rate POST, varying sent width properties
+       POST /rate with 90 mm width
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  54) Test /rate POST, varying sent width properties
+       POST /rate with 91 mm width
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  55) Test /rate POST, varying sent width properties
+       POST /rate with 155 mm width
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  56) Test /rate POST, varying sent width properties
+       POST /rate with 156 mm width
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  57) Test /rate POST, varying sent width properties
+       POST /rate with 157 mm width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  58) Test /rate POST, varying sent width properties
+       POST /rate with 269 mm width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  59) Test /rate POST, varying sent width properties
+       POST /rate with 270 mm width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  60) Test /rate POST, varying sent width properties
+       POST /rate with 271 mm width
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  61) Test /rate POST, varying sent width properties
+       POST /rate with -1 inch width
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  62) Test /rate POST, varying sent width properties
+       POST /rate with 0 inch width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  63) Test /rate POST, varying sent width properties
+       POST /rate with 1 inch width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  64) Test /rate POST, varying sent width properties
+       POST /rate with 5 inch width
+         it should yield a OK response status with rate at 0.49:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  65) Test /rate POST, varying sent width properties
+       POST /rate with 8 inch width
+         it should yield a OK response status with rate at 0.98:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 501
+      + expected - actual
+
+      -501
+      +200
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  66) Test /rate POST, varying sent width properties
+       POST /rate with 12 inch width
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  67) Test /rate POST, varying sent width properties
+       POST /rate with 1 asdf width
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  68) Test /rate POST, varying sent width properties
+       POST /rate with asdf inch width
+         it should yield a Bad request response status:
+
+      Uncaught AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 501
+      + expected - actual
+
+      -501
+      +400
+
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\test\WidthTests.js:25:25
+      at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+      at C:\Users\Edwin\Documents\Homework\ECSE428 - Software Practice\Assignment B\repo\ECSE428_ASSB_G49\node_modules\superagent\lib\node\index.js:916:18
+      at IncomingMessage.<anonymous> (node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+
+
+
+Edwin@ALPHA MINGW64 ~/Documents/Homework/ECSE428 - Software Practice/Assignment B/repo/ECSE428_ASSB_G49 (master)
+$

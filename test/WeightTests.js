@@ -93,6 +93,4 @@ describe("Test /rate POST, varying sent weight properties", () =>{
     // Bad payload: non-numeric weight
     loggedTest_RateByWeights("asdf","g","Bad request response status",400);
 
-;
-
 });

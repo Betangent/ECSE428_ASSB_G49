@@ -2,6 +2,15 @@
 
 Submission for Group 49's Rest API Postal Rate Calculator.
 
+## Team Members
+
+The team comprises of a sole student completing the assignment on their own because they failed to find a teammate.
+Team thus comprises:
+- Edwin Pan, 260843175
+
 ## Overview
 
-The assignment in effect has students put to practice Test Driven Development working on a REST API which when given data in width, height, and weight in real world units of mm, inches, grams, and ounches returns a postal rate. The parts of the delivered application most important to this assignment are the tests and the application. The application will be simple nodejs backend and the tests will be written with the help of the Mocha testing framework with Chai.
+The project comprises a very simple express.js backend which returns a postal rate via json `{rate: NUMERIC_OUTPUT}` when given a POST request in URI /rate with a sent body comprising of json in format `{length: NUM, length_unit: STR, width: NUM, width_unit: STR, weight: NUM, width_unit: STR}`.
+The server responds to post requests in URI `/example/error` and `/example/good` though these are not meant for end use and were created in order to allow me to figure out how to write test code - the test code of which is found in the tests folder of the project as ControlTests.js.
+The server is ran via the command `npm run start:dev`. This creates a localhost server open on port 8080. There is no production build of this server at this time.
+The tests for this project are ran via the command `npm test`, which runs tests under the Mocha and Chai framework.

@@ -48,6 +48,37 @@ function loggedTest_RateByLengths(len, len_unit, desc_expectedRes, resStatus, re
 // Mocha Test Parent for all tests in this file
 describe("Test /rate POST, varying sent length properties", () =>{
 
+    // Out of bounds: negative mm is not possible
     loggedTest_RateByLengths(-1,"mm","Bad request response status",400);
+    // Non-standard envelope sizes in mm
+    loggedTest_RateByLengths(0,"mm","OK response status", 200, 0.98);
+    loggedTest_RateByLengths(1,"mm","OK response status", 200, 0.98);
+    loggedTest_RateByLengths(139,"mm","OK response status", 200, 0.98);
+    // Standard envelope sizes in mm
+    loggedTest_RateByLengths(140,"mm","OK response status", 200, 0.49);
+    loggedTest_RateByLengths(141,"mm","OK response status", 200, 0.49);
+    loggedTest_RateByLengths(244,"mm","OK response status", 200, 0.49);
+    loggedTest_RateByLengths(245,"mm","OK response status", 200, 0.49);
+    // Non-standard envelope sizes in mm
+    loggedTest_RateByLengths(246,"mm","OK response status", 200, 0.98);
+    loggedTest_RateByLengths(379,"mm","OK response status", 200, 0.98);
+    loggedTest_RateByLengths(380,"mm","OK response status", 200, 0.98);
+    // Out of bounds: oversized envelope: we assume 380mm is limit.
+    loggedTest_RateByLengths(381,"mm","Bad request response status", 400);
+    // Out of bounds: negative inches in possible
+    loggedTest_RateByLengths(-1,"inch","Bad request response status", 400);
+    // Non-standard envelope sizes in inches
+    loggedTest_RateByLengths(0,"inch","OK response status", 200, 0.98);
+    loggedTest_RateByLengths(1,"inch","OK response status", 200, 0.98);
+    // Standard envelope size in inches
+    loggedTest_RateByLengths(7.875,"inch","OK response status", 200, 0.49);
+    // Non-standard envelope sizes in inches
+    loggedTest_RateByLengths(12,"inch","OK response status", 200, 0.98);
+    // Out of bounds: oversized envelope: we assume 380mm is limit.
+    loggedTest_RateByLengths(16,"inch","Bad request response status", 400);
+    // Bad payload: invalid unit of length
+    loggedTest_RateByLengths(0,"asdf","Bad request response status", 400);
+    // Bad Payload: non-integer length
+    loggedTest_RateByLengths("asdf","inch","Bad request response status", 400);
 
 });

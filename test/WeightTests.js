@@ -51,41 +51,41 @@ describe("Test /rate POST, varying sent weight properties", () =>{
     // Out of bounds: negative weight is not possible in oz
     loggedTest_RateByWeights(-1,"g","Bad request response status",400);
     // Standard dimensions, non-standard non-heavy weights in g
-    loggedTest_RateByWeights(0,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(1,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(2,"g","OK response status", 200, 0.);
+    loggedTest_RateByWeights(0,"g","OK response status", 200, 0.98);
+    loggedTest_RateByWeights(1,"g","OK response status", 200, 0.98);
+    loggedTest_RateByWeights(2,"g","OK response status", 200, 0.98);
     // Standard dimensions, standard non-heavy weights in g
-    loggedTest_RateByWeights(3,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(4,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(29,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(30,"g","OK response status", 200, 0.);
+    loggedTest_RateByWeights(3,"g","OK response status", 200, 0.49);
+    loggedTest_RateByWeights(4,"g","OK response status", 200, 0.49);
+    loggedTest_RateByWeights(29,"g","OK response status", 200, 0.49);
+    loggedTest_RateByWeights(30,"g","OK response status", 200, 0.49);
     // Standard dimensions, standard heavier weights in g
-    loggedTest_RateByWeights(31,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(49,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(50,"g","OK response status", 200, 0.);
+    loggedTest_RateByWeights(31,"g","OK response status", 200, 0.80);
+    loggedTest_RateByWeights(49,"g","OK response status", 200, 0.80);
+    loggedTest_RateByWeights(50,"g","OK response status", 200, 0.80);
     // Standard dimensions, non-standard non-heavy weights in g
-    loggedTest_RateByWeights(51,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(99,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(100,"g","OK response status", 200, 0.);
+    loggedTest_RateByWeights(51,"g","OK response status", 200, 0.98);
+    loggedTest_RateByWeights(99,"g","OK response status", 200, 0.98);
+    loggedTest_RateByWeights(100,"g","OK response status", 200, 0.98);
     // Standard dimensions, non-standard heavy weights in g
-    loggedTest_RateByWeights(101,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(499,"g","OK response status", 200, 0.);
-    loggedTest_RateByWeights(500,"g","OK response status", 200, 0.);
+    loggedTest_RateByWeights(101,"g","OK response status", 200, 2.40);
+    loggedTest_RateByWeights(499,"g","OK response status", 200, 2.40);
+    loggedTest_RateByWeights(500,"g","OK response status", 200, 2.40);
     // Out of bounds: weight above 500 g in oz
     loggedTest_RateByWeights(501,"oz","Bad request response status",400);
     // Out of bounds: negative weight it not possible in oz
     loggedTest_RateByWeights(-1,"oz","Bad request response status",400);
     // Standard dimensions, non-standard non-heavy weights in oz
-    loggedTest_RateByWeights(0,"oz","OK response status", 200, 0.);
+    loggedTest_RateByWeights(0,"oz","OK response status", 200, 0.98);
     // Standard dimensions, standard non-heavy weights in oz
-    loggedTest_RateByWeights(0.5,"oz","OK response status", 200, 0.);
-    loggedTest_RateByWeights(1,"oz","OK response status", 200, 0.);
+    loggedTest_RateByWeights(0.5,"oz","OK response status", 200, 0.49);
+    loggedTest_RateByWeights(1,"oz","OK response status", 200, 0.49);
     // Standard dimensions, standard heavier weights in oz
-    loggedTest_RateByWeights(1.5,"oz","OK response status", 200, 0.);
+    loggedTest_RateByWeights(1.5,"oz","OK response status", 200, 0.80);
     // Standard dimensions, non-standard non-heavy weights in oz
-    loggedTest_RateByWeights(2.5,"oz","OK response status", 200, 0.);
+    loggedTest_RateByWeights(2.5,"oz","OK response status", 200, 0.98);
     // Standard dimensions, non-standard heavy weights in oz
-    loggedTest_RateByWeights(9,"oz","OK response status", 200, 0.);
+    loggedTest_RateByWeights(9,"oz","OK response status", 200, 2.40);
     // Out of bounds: weight above 500 g in oz
     loggedTest_RateByWeights(20,"oz","Bad request response status",400);
     // Bad payload: invalid unit of weight measurement

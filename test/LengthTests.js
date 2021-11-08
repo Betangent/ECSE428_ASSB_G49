@@ -7,8 +7,8 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-// Test Template for Length Tests
-function testRateWithVaryingLengths(l, l_u, rstatus, rrate = null){
+// Test Template for Length Tests - Chai and JSON level
+function test_RateByLengths(l, l_u, done, rstatus, rrate = null){
     let envelopeProperties = {
         length : l, 
         length_unit : l_u,
@@ -32,13 +32,22 @@ function testRateWithVaryingLengths(l, l_u, rstatus, rrate = null){
     });
 }
 
-// Test Parent Block
-describe("Test /rate POST, varying sent length properties", () =>{
-
-    describe("POST /rate with -1 mm length ", () =>{
-        it("it should yield a Bad Request response status", (done) => {
-            testRateWithVaryingLengths(-1,"mm",400)
+// Test Template for Length Tests - Mocha level
+function loggedTest_RateByLengths(len, len_unit, desc_expectedRes, resStatus, resRate = null){
+    describe("POST /rate with " + len + " " + len_unit, () => {
+        let description = "it should yield a " + desc_expectedRes;
+        if(resRate !== null){
+            description = description + " with rate at " + resRate;
+        }
+        it(description, (done) => {
+            test_RateByLengths(len,len_unit,done,resStatus,resRate)
         });
     });
+}
+
+// Mocha Test Parent for all tests in this file
+describe("Test /rate POST, varying sent length properties", () =>{
+
+    loggedTest_RateByLengths(-1,"mm","Bad request response status",400);
 
 });

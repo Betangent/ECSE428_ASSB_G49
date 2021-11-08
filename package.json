@@ -4,7 +4,7 @@
   "description": "RAMP REST API Service",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --exit"
+    "test": "run_mocha_tests.bat"
   },
   "repository": {
     "type": "git",
